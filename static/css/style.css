@@ -1,0 +1,62 @@
+.location-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #f3f4f6;
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.location-item button {
+    margin-left: auto;
+    padding: 0.25rem 0.5rem;
+    background-color: #ef4444;
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.location-item button:hover {
+    background-color: #dc2626;
+}
+
+.route-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+}
+
+.route-header {
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.route-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-left: 4px solid #10b981;
+    background-color: #f3f4f6;
+    margin-bottom: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.route-item .number {
+    font-weight: bold;
+    margin-right: 1rem;
+    color: #059669;
+    min-width: 1.5rem;
+}
+
+.route-item .flex-1 {
+    flex: 1;
+}
+
+/* Custom map styles */
+#map {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+} 

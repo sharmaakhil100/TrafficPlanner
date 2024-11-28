@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic-Optimized Trip Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Traffic-Optimized Trip Planner</h1>
+            <p class="text-gray-600">Plan your day trip with real-time traffic optimization</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Add Locations</h2>
+                <div class="space-y-4">
+                    <div class="flex space-x-2">
+                        <input type="text" id="location-input" placeholder="Enter a location" 
+                               class="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <button onclick="addLocation()" 
+                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Add
+                        </button>
+                    </div>
+                    <div id="locations-list" class="space-y-2">
+                        <!-- Locations will be added here -->
+                    </div>
+                    <button onclick="optimizeRoute()" 
+                            class="w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+                        Optimize Route
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div id="map" class="w-full h-96 rounded"></div>
+            </div>
+        </div>
+
+        <div id="optimized-route" class="mt-8 bg-white rounded-lg shadow-lg p-6 hidden">
+            <h2 class="text-2xl font-semibold mb-4">Optimized Route</h2>
+            <div id="route-details" class="space-y-2">
+                <!-- Route details will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Google Maps JavaScript API with required libraries -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwY8InW4VeUvRf6p4U1DKYAtJM-x9AF3o&libraries=places,visualization&callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
